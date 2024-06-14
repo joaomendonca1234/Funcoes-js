@@ -6,38 +6,41 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: " Quanto é 7x8" [
+        enunciado: "Quanto é 7x8",
+        alternativas: [
             {
-                texto: "56".,
-                afirmacao: "Parabens,voce acerto!!!. "
+                texto: "56",
+                afirmacao: "1.Parabens,voce acerto!!!."
             },
             {
                 texto: "48",
-                afirmacao: " ERROUU!!!!!."
+                afirmacao: "1.ERROUU!!!!!"
             }
         ]
     },
     {
-        enunciado: "9x15" [
+        enunciado: "9x15",
+        alternativas: [
             {
                 texto: "135.",
-                afirmacao: "Parabens, voce é otimo."
+                afirmacao: "2.Parabens, voce é otimo."
             },
             {
-                texto: " 225.",
-                afirmacao: " Voce pode melhorar."
+                texto: "225",
+                afirmacao: "2.Voce pode melhorar."
             }
         ]
     },
     {
-        enunciado: "85x7": [
+        enunciado: "85x7",
+        alternativas: [
             {
-                texto: "595.",
-                afirmacao: "Parabens, voce é otimo."
+                texto: "595",
+                afirmacao: "3.Parabens, voce é otimo"
             },
             {
-                texto: "980",
-                afirmacao: "Procure melhorar."
+                texto: "980.",
+                afirmacao: "3.Procure melhorar."
             }
         ]
     },
@@ -45,24 +48,25 @@ const perguntas = [
         enunciado: "577x8",
         alternativas: [
             {
-                texto: "4.616.",
-                afirmacao: "Aertou, parabens."
+                texto: "4.616",
+                afirmacao: "4. Aertou, parabens."
             },
             {
-                texto: "7.890.",
-                afirmacao: "Errou, voce pode melhorar!"
+                texto: "7.890",
+                afirmacao: "4.Errou, voce pode melhorar!"
             }
         ]
     },
     {
-        enunciado: "90/5: [
+        enunciado: "90/5",
+        alternativas: [
             {
                 texto: "18.",
-                afirmacao: "Acertou, parabens."
+                afirmacao: "5.Acertou, parabens.."
             },
             {
-                texto: "22.",
-                afirmacao: "Procure melhorar. "
+                texto: "22",
+                afirmacao: "5.Procure melhorar."
             }
         ]
     },
@@ -85,7 +89,7 @@ function mostraPergunta() {
 }
 
 function mostraAlternativas(){
-    for(const altPercebeu que toda IA reproduz orientações baseadas na empresa que programou e muito do que o chat escrevia não refletia o que pensava e por isso sabe que os textos gerados pela IA devem servir como auxílio e não resultado finalernativa of perguntaAtual.alternativas) {
+    for(const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
         botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
@@ -101,7 +105,7 @@ function respostaSelecionada(opcaoSelecionada) {
 }
 
 function mostraResultado() {
-    caixaPerguntas.textContent = "Em 2049...";
+    caixaPerguntas.textContent = "Gabarito...";
     textoResultado.textContent = historiaFinal;
     caixaAlternativas.textContent = "";
 }
